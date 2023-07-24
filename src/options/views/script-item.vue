@@ -63,18 +63,6 @@
               <icon :name="`toggle-${script.config.enabled ? 'on' : 'off'}`"></icon>
             </a>
           </tooltip>
-          <tooltip
-            :disabled="!canUpdate || script.checking"
-            :content="i18n('buttonCheckForUpdates')"
-            align="start">
-            <a
-              class="btn-ghost"
-              @click="onUpdate"
-              :data-hotkey="hotkeys.update"
-              :tabIndex="canUpdate ? tabIndex : -1">
-              <icon name="refresh"></icon>
-            </a>
-          </tooltip>
         </template>
         <span class="sep"></span>
         <tooltip :disabled="!description" :content="description" align="start">

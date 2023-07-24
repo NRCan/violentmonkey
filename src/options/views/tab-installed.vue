@@ -21,11 +21,6 @@
               />
             </template>
           </Dropdown>
-          <Tooltip :content="i18n('buttonUpdateAll')" placement="bottom" align="start">
-            <a class="btn-ghost" tabindex="0" @click="handleUpdateAll">
-              <Icon name="refresh" />
-            </a>
-          </Tooltip>
         </div>
         <div class="flex-auto" v-else v-text="i18n('headerRecycleBin')" />
         <Dropdown align="right" class="filter-sort">
