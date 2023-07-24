@@ -60,9 +60,6 @@
     <section class="mb-1c">
     </section>
     <section class="mb-2c">
-      <h3 v-text="i18n('labelBackup')" />
-      <vm-import></vm-import>
-      <vm-export></vm-export>
     </section>
     <vm-sync></vm-sync>
     <details v-for="(obj, key) in {showAdvanced: settings}" :key="key" :open="obj[key]">
