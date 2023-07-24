@@ -32,13 +32,6 @@
         @click="onManage">
         <icon name="cog"></icon>
       </span>
-      <span
-        class="menu-area"
-        :data-message="i18n('menuNewScript')"
-        :tabIndex="tabIndex"
-        @click="onCreateScript">
-        <icon name="plus"></icon>
-      </span>
     </div>
     <div class="menu" v-if="store.injectable" v-show="store.domain">
       <div class="menu-item menu-area menu-find">
@@ -330,13 +323,6 @@ export default {
         || optionsData.isApplied === false && i18n('menuScriptDisabled')
         || ''
       );
-    },
-    findUrls() {
-      const query = encodeURIComponent(store.domain);
-      return {
-        [`${i18n('menuFindScripts')} (GF)`]: `https://greasyfork.org/scripts/by-site/${query}`,
-        OUJS: `https://openuserjs.org/?q=${query}`,
-      };
     },
     tabIndex() {
       return this.activeExtras ? -1 : 0;
