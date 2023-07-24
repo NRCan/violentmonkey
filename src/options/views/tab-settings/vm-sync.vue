@@ -1,6 +1,3 @@
-<template>
-</template>
-
 <script>
 import Tooltip from 'vueleton/lib/tooltip';
 import { sendCmdDirectly } from '@/common';
@@ -20,9 +17,6 @@ hookSetting(SYNC_CURRENT, (value) => {
 
 export default {
   components: {
-    SettingCheck,
-    Icon,
-    Tooltip,
   },
   data() {
     return {
