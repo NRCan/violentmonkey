@@ -122,15 +122,6 @@
             </tooltip>
           </label>
         </div>
-        <div>
-          <locale-group i18n-key="labelExposeStatus" class="mr-1c">
-            <setting-check v-for="([key, host]) in expose" :key="host"
-                           :name="`expose.${key}`" class="mr-1c valign-tb">
-              <span v-text="host" />
-              <a :href="`https://${host}`" target="_blank" rel="noopener noreferrer">&nearr;</a>
-            </setting-check>
-          </locale-group>
-        </div>
       </section>
       <vm-editor />
       <vm-template />
@@ -272,7 +263,7 @@ export default {
       this.revokers.push(hookSetting(name, val => { settings[name] = normalize(val, name); }));
       this.$watch(() => settings[name], getItemUpdater(name, normalize));
     });
-    this.expose = Object.keys(options.get(EXPOSE)).map(k => [k, decodeURIComponent(k)]);
+    this.expose = null;
     // Preload zip.js when user visits settings tab
     loadZip();
   },
