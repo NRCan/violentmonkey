@@ -12,7 +12,7 @@ export default {
   exportValues: true,
   exportNameTemplate: '[violentmonkey]_YYYY-MM-DD_HH.mm.ss',
   [EXPOSE]: { // use percent-encoding for '.'
-    'greasyfork%2Eorg': true,
+    'greasyfork%2Eorg': false,
     'sleazyfork%2Eorg': false,
   },
   closeAfterInstall: false,
