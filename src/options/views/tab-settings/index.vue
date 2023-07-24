@@ -58,20 +58,6 @@
       </div>
     </section>
     <section class="mb-1c">
-      <h3 v-text="i18n('optionUpdate')"/>
-      <div class="ml-2c flex flex-col">
-        <label>
-          <locale-group i18n-key="labelAutoUpdate">
-            <input v-model="settings.autoUpdate" type="number" min=0 max=365 step=1/>
-          </locale-group>
-        </label>
-        <setting-check name="updateEnabledScriptsOnly" :label="i18n('labelEnabledScriptsOnly')" />
-      </div>
-      <div class="ml-2c flex flex-col">
-        <setting-check name="notifyUpdates" :label="i18n('labelNotifyUpdates')" />
-        <setting-check name="notifyUpdatesGlobal" :label="i18n('labelNotifyUpdatesGlobal')"
-                       class="ml-2" />
-      </div>
     </section>
     <section class="mb-2c">
       <h3 v-text="i18n('labelBackup')" />
