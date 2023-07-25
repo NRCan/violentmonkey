@@ -1,6 +1,6 @@
 export default {
   isApplied: true,
-  autoUpdate: 1, // days, 0 = disable
+  autoUpdate: 0, // days, 0 = disable
   updateEnabledScriptsOnly: true,
   // ignoreGrant: false,
   lastUpdate: 0,
@@ -12,7 +12,7 @@ export default {
   exportValues: true,
   exportNameTemplate: '[violentmonkey]_YYYY-MM-DD_HH.mm.ss',
   [EXPOSE]: { // use percent-encoding for '.'
-    'greasyfork%2Eorg': true,
+    'greasyfork%2Eorg': false,
     'sleazyfork%2Eorg': false,
   },
   closeAfterInstall: false,

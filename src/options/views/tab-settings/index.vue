@@ -58,25 +58,8 @@
       </div>
     </section>
     <section class="mb-1c">
-      <h3 v-text="i18n('optionUpdate')"/>
-      <div class="ml-2c flex flex-col">
-        <label>
-          <locale-group i18n-key="labelAutoUpdate">
-            <input v-model="settings.autoUpdate" type="number" min=0 max=365 step=1/>
-          </locale-group>
-        </label>
-        <setting-check name="updateEnabledScriptsOnly" :label="i18n('labelEnabledScriptsOnly')" />
-      </div>
-      <div class="ml-2c flex flex-col">
-        <setting-check name="notifyUpdates" :label="i18n('labelNotifyUpdates')" />
-        <setting-check name="notifyUpdatesGlobal" :label="i18n('labelNotifyUpdatesGlobal')"
-                       class="ml-2" />
-      </div>
     </section>
     <section class="mb-2c">
-      <h3 v-text="i18n('labelBackup')" />
-      <vm-import></vm-import>
-      <vm-export></vm-export>
     </section>
     <vm-sync></vm-sync>
     <details v-for="(obj, key) in {showAdvanced: settings}" :key="key" :open="obj[key]">
@@ -121,15 +104,6 @@
               </locale-group>
             </tooltip>
           </label>
-        </div>
-        <div>
-          <locale-group i18n-key="labelExposeStatus" class="mr-1c">
-            <setting-check v-for="([key, host]) in expose" :key="host"
-                           :name="`expose.${key}`" class="mr-1c valign-tb">
-              <span v-text="host" />
-              <a :href="`https://${host}`" target="_blank" rel="noopener noreferrer">&nearr;</a>
-            </setting-check>
-          </locale-group>
         </div>
       </section>
       <vm-editor />
@@ -272,7 +246,7 @@ export default {
       this.revokers.push(hookSetting(name, val => { settings[name] = normalize(val, name); }));
       this.$watch(() => settings[name], getItemUpdater(name, normalize));
     });
-    this.expose = Object.keys(options.get(EXPOSE)).map(k => [k, decodeURIComponent(k)]);
+    this.expose = null;
     // Preload zip.js when user visits settings tab
     loadZip();
   },

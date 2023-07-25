@@ -19,21 +19,8 @@
                 tabindex="0"
                 @click.prevent="handleEditScript('_new')"
               />
-              <a class="dropdown-menu-item" v-text="i18n('installFrom', 'OpenUserJS')" href="https://openuserjs.org/" target="_blank" rel="noopener noreferrer"></a>
-              <a class="dropdown-menu-item" v-text="i18n('installFrom', 'GreasyFork')" href="https://greasyfork.org/scripts" target="_blank" rel="noopener noreferrer"></a>
-              <a
-                class="dropdown-menu-item"
-                v-text="i18n('buttonInstallFromURL')"
-                tabindex="0"
-                @click.prevent="handleInstallFromURL"
-              />
             </template>
           </Dropdown>
-          <Tooltip :content="i18n('buttonUpdateAll')" placement="bottom" align="start">
-            <a class="btn-ghost" tabindex="0" @click="handleUpdateAll">
-              <Icon name="refresh" />
-            </a>
-          </Tooltip>
         </div>
         <div class="flex-auto" v-else v-text="i18n('headerRecycleBin')" />
         <Dropdown align="right" class="filter-sort">
